@@ -1,0 +1,12 @@
+{
+  "name": "pick",
+  "description": "Chọn ngẫu nhiên các lựa chọn nhập vào",
+  "options": [
+    {
+      "name": "options",
+      "description": "Các lựa chọn, cách nhau bởi dấu ',' (phẩy), vd /pick ark 30$, ark 100$",
+      "type": 3,
+      "required": true
+    }
+  ]
+}

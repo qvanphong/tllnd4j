@@ -1,0 +1,12 @@
+{
+  "name": "avatar",
+  "description": "Lấy avatar của người được tag",
+  "options": [
+    {
+      "name": "user",
+      "description": "Người mà bạn muốn lấy avatar",
+      "type": 6,
+      "required": true
+    }
+  ]
+}

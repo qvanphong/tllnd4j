@@ -1,0 +1,64 @@
+{
+  "name": "poll",
+  "description": "Mở cuộc bình chọn",
+  "options": [
+    {
+      "name": "question",
+      "description": "Câu hỏi",
+      "type": 3,
+      "required": true
+    },
+    {
+      "name": "option_1",
+      "description": "Đáp án 1",
+      "type": 3,
+      "required": true
+    },
+    {
+      "name": "option_2",
+      "description": "Đáp án 2",
+      "type": 3,
+      "required": true
+    },
+    {
+      "name": "option_3",
+      "description": "Đáp án 3",
+      "type": 3
+    },
+    {
+      "name": "option_4",
+      "description": "Đáp án 4",
+      "type": 3
+    },
+    {
+      "name": "option_5",
+      "description": "Đáp án 5",
+      "type": 3
+    },
+    {
+      "name": "option_6",
+      "description": "Đáp án 6",
+      "type": 3
+    },
+    {
+      "name": "option_7",
+      "description": "Đáp án 7",
+      "type": 3
+    },
+    {
+      "name": "option_8",
+      "description": "Đáp án 8",
+      "type": 3
+    },
+    {
+      "name": "option_9",
+      "description": "Đáp án 9",
+      "type": 3
+    },
+    {
+      "name": "option_10",
+      "description": "Đáp án 10",
+      "type": 3
+    }
+  ]
+}

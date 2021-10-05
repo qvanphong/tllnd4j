@@ -1,0 +1,12 @@
+{
+  "name": "emoji",
+  "description": "Lấy ảnh gốc của emoji",
+  "options": [
+    {
+      "name": "emoji",
+      "description": "emoji cần lấy ảnh gốc",
+      "type": 3,
+      "required": true
+    }
+  ]
+}

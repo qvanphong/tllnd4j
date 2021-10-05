@@ -1,0 +1,12 @@
+{
+  "name": "price",
+  "description": "Lấy giá của một coin cụ thể nào đó",
+  "options": [
+    {
+      "name": "coin_name",
+      "description": "Tên coin cần tìm kiếm",
+      "type": 3,
+      "required": true
+    }
+  ]
+}

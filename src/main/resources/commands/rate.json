@@ -1,0 +1,24 @@
+{
+  "name": "rate",
+  "description": "Tính rate giữa 2 coin",
+  "options": [
+    {
+      "name": "coin_a",
+      "description": "Coin muốn tính rate",
+      "type": 3,
+      "required": true
+    },
+    {
+      "name": "coin_b",
+      "description": "Coin muốn tính rate sang",
+      "type": 3,
+      "required": true
+    },
+    {
+      "name": "amount",
+      "description": "Số lượng, nếu chỉ cần tính rate mặc định thì không cần nhập vào",
+      "type": 3,
+      "required": false
+    }
+  ]
+}
