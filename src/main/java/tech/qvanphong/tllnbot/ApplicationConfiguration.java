@@ -9,12 +9,14 @@ import discord4j.core.event.domain.interaction.ChatInputInteractionEvent;
 import discord4j.core.event.domain.interaction.MessageInteractionEvent;
 import discord4j.core.event.domain.lifecycle.DisconnectEvent;
 import discord4j.core.event.domain.lifecycle.ReadyEvent;
+import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.rest.RestClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import tech.qvanphong.tllnbot.commands.config.BotConfig;
+import tech.qvanphong.tllnbot.config.BotConfig;
+import tech.qvanphong.tllnbot.interaction.MessageCreateListener;
 import tech.qvanphong.tllnbot.listeners.MessageInteractionListener;
 import tech.qvanphong.tllnbot.listeners.ReadyEventListener;
 import tech.qvanphong.tllnbot.listeners.SlashCommandListener;
@@ -57,7 +59,8 @@ public class ApplicationConfiguration {
     public GatewayDiscordClient discordClient(BotConfig botConfig,
                                               SlashCommandListener slashCommandListener,
                                               ReadyEventListener readyEventListener,
-                                              MessageInteractionListener messageInteractionListener) {
+                                              MessageInteractionListener messageInteractionListener,
+                                              MessageCreateListener messageCreateListener) {
         String token = botConfig.getToken();
         // Login
         return DiscordClientBuilder.create(token).build()
@@ -75,6 +78,9 @@ public class ApplicationConfiguration {
                             .on(MessageInteractionEvent.class)
                             .flatMap(messageInteractionListener::handle);
 
+                    Flux<Object> messageCreateEventFlux = eventDispatcher.on(MessageCreateEvent.class)
+                            .flatMap(messageCreateListener::handle);
+
                     Flux<DisconnectEvent> onDisconnect = eventDispatcher.on(DisconnectEvent.class)
                             .flatMap(disconnectEvent -> {
                                 System.out.println(disconnectEvent);
@@ -82,7 +88,7 @@ public class ApplicationConfiguration {
                             });
 
 
-                    return Mono.when(onReadyFlux, messageInteractionFlux, slashCommandFlux, onDisconnect);
+                    return Mono.when(onReadyFlux, messageCreateEventFlux, messageInteractionFlux, slashCommandFlux, onDisconnect);
                 })
                 .login()
                 .block();

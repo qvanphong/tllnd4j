@@ -9,7 +9,7 @@ import discord4j.rest.util.Color;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
-import tech.qvanphong.tllnbot.commands.config.BotConfig;
+import tech.qvanphong.tllnbot.config.BotConfig;
 import tech.qvanphong.tllnbot.interaction.MessageInteractionCommand;
 
 @Component

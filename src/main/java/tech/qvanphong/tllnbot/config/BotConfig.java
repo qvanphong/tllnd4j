@@ -1,4 +1,4 @@
-package tech.qvanphong.tllnbot.commands.config;
+package tech.qvanphong.tllnbot.config;
 
 import lombok.Getter;
 import lombok.Setter;

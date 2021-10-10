@@ -1,0 +1,18 @@
+{
+  "name": "add",
+  "description": "Thêm lệnh gửi nhanh hình ảnh (theo link)",
+  "options": [
+    {
+      "name": "command",
+      "description": "Tên lệnh",
+      "type": 3,
+      "required": true
+    },
+    {
+      "name": "image_link",
+      "description": "Link nội dung (link theo discord có định dạng cdn.discordapp.com hoặc media.discordapp.net)",
+      "type": 3,
+      "required": true
+    }
+  ]
+}
